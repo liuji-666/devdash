@@ -10,7 +10,7 @@ import { AddWidgetDialog } from "./components/dashboard/AddWidgetDialog";
 import { OnboardingWizard } from "./components/onboarding/OnboardingWizard";
 import { CommandPalette } from "./components/CommandPalette";
 import { MorningTriageModal } from "./components/triage/MorningTriageModal";
-import { DebugPanel } from "./components/dashboard/DebugPanel";
+
 import SettingsView from "./components/settings/SettingsView";
 import { useDashboardStore } from "./stores/dashboardStore";
 import { useSettingsStore } from "./stores/settingsStore";
@@ -333,8 +333,6 @@ export default function App() {
           }))}
         />
         
-        {/* Debug Panel - dev only */}
-        {import.meta.env.DEV && <DebugPanel />}
       </div>
         </>
       )}
