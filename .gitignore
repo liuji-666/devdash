@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+src-tauri/target/
+dist/
+
+# Generated files (keep screenshots)
+docs/screenshots/screen*.png
+docs/screenshots/devdash_window.png
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temp / debug artifacts in workspace root
+_temp_*
+temp_*
+expand_*.py
+check*.py
+fix*.py
+write_ch*.py
+rewrite_*.py
+generate_*.py
+verify_*.py
+devdash-*.md
+task-summary*.md
+encrypt_token*
+devdash_diag.log
+
+# OpenClaw artifacts
+../task-*.md
+../.openclaw/
+../sessions/
+../skills/

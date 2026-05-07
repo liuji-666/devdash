@@ -1,0 +1,50 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "DevDash",
+  "version": "0.1.0",
+  "identifier": "com.devdash.devdash",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1422",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "DevDash",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 600,
+        "center": true,
+        "decorations": false,
+        "transparent": false,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' https://api.github.com https://gitlab.com https://*.atlassian.net http://localhost:* ipc: http://localhost:*; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "publisher": "DevDash",
+    "copyright": "Copyright © 2026 DevDash Contributors",
+    "shortDescription": "开发者晨间桌面伴侣 — 聚合 GitHub/GitLab 数据，Widget 化仪表盘",
+    "longDescription": "DevDash 是开发者打开电脑的第一屏。聚合 GitHub PR/Issue/CI、GitLab MR 等数据源，支持 Widget 拖拽布局、Ollama AI 摘要、系统托盘常驻。",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser"
+      }
+    }
+  }
+}

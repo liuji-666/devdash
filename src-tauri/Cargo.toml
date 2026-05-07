@@ -1,0 +1,37 @@
+[package]
+name = "devdash"
+version = "0.1.0"
+description = "DevDash — Developer Personal Dashboard"
+authors = ["DevDash"]
+edition = "2021"
+
+[lib]
+name = "devdash_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-opener = "2"
+tauri-plugin-shell = "2"
+tauri-plugin-notification = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", features = ["json"] }
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4"] }
+thiserror = "2"
+log = "0.4"
+env_logger = "0.11"
+aes-gcm = "0.10"
+argon2 = "0.5"
+rand = "0.8"
+base64 = "0.22"
+keyring = "3"
+whoami = "1"
+open = "5"
+urlencoding = "2"

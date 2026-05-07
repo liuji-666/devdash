@@ -1,0 +1,37 @@
+Fix P0-1: Add GitHub token verification in DevDash.
+
+Project: C:\Users\刘吉\.qclaw\workspace\devdash
+
+## Task
+Add token verification in two places so users get immediate feedback if their GitHub PAT is invalid/expired.
+
+## Current State
+- verify_github_token Rust command exists in src-tauri/src/commands.rs (already verified working)
+- Frontend API function apiVerifyGithubToken exists in src/lib/api.ts
+- OnboardingWizard.tsx saves GitHub source WITHOUT verifying token
+- SettingsView.tsx saves GitHub source WITHOUT verifying token
+- No test button exists
+
+## Changes Needed
+
+### 1. OnboardingWizard.tsx (src/components/onboarding/OnboardingWizard.tsx)
+Read this file first. In the GitHub configuration step (where user enters GitHub PAT), after the token is entered and before saving:
+- Call apiVerifyGithubToken(token) to validate
+- If valid: show success indicator (green checkmark + username) then proceed
+- If invalid: show error message and block saving
+- Show loading state while verifying (spinner)
+
+### 2. SettingsView.tsx (src/components/settings/SettingsView.tsx)
+Read this file. In the GitHub source save flow:
+- When user clicks save for a GitHub source, call apiVerifyGithubToken(token) first
+- If invalid: show error toast and DO NOT save
+- If valid: proceed with save and show success toast
+- Also add a "Test Connection" button next to the token input field
+
+## Important Notes
+- Use the existing apiVerifyGithubToken function from src/lib/api.ts
+- Keep all existing functionality - only add verification, do not remove anything
+- The verify_github_token command returns: { valid, login, name, avatar_url, public_repos, message }
+- Show the returned login name in the success state
+- Do NOT change the Rust backend - everything is already there
+- After making changes, verify: npm run build in the devdash directory
