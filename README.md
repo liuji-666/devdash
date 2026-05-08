@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="docs/screenshots/dark-theme.png" alt="DevDash Dashboard" width="100%">
-</p>
+
 
 <h1 align="center">🖥️ DevDash — 开发者的晨间仪式感 🌅</h1>
 
@@ -76,18 +74,6 @@ curl -fsSL https://raw.githubusercontent.com/devdash/devdash/main/scripts/instal
 | 🤖 **AI 增强** | 本地 Ollama + 多云 AI 摘要 | 每天下班自动生成日报，节省 30 分钟手动整理 |
 | 🔒 **隐私优先** | Keyring + AES-256-GCM 加密 | 敏感仓库信息永不外泄，企业级安全 |
 | ⚡ **轻量极速** | Tauri v2 + Rust 核心 | 启动速度 0.8s，比同类工具快 3-5 倍 |
-
-### 📸 界面预览（真实截图）
-
-| 仪表盘概览 | 通知中心 |
-|:----------:|:--------:|
-| <img src="docs/screenshots/dark-theme.png" width="400" alt="Dashboard"> | <img src="docs/screenshots/notifications.png" width="400" alt="Notifications"> |
-
-| 贡献热力图 | 轻量主题 |
-|:----------:|:--------:|
-| <img src="docs/screenshots/heatmap.png" width="400" alt="Heatmap"> | <img src="docs/screenshots/light-theme.png" width="400" alt="Light Theme"> |
-
-> 🎬 点击观看完整演示 - 2分钟了解全部功能
 
 ---
 
